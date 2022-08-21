@@ -1,0 +1,46 @@
+// Create a new repository on the command line
+echo "# myLearn" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/corcog/myLearn.git
+git push -u origin main
+
+// Push an existing repository from the command line
+git remote add origin https://github.com/corcog/myLearn.git
+git branch -M main
+git push -u origin main
+
+// Простое добавление коммитов в удалённый репозиторий:
+git add .
+git commit -m "text"
+git push 
+
+// Прописать пользователя:
+git config --global user.email "yndx-corcog@ya.ru"
+git config --global user.name "corcog"
+
+// Если вы изменили ваши локальные файлы, то команда git pull выдаст ошибку. 
+// Если вы уверены, что хотите перезаписать локальные файлы, файлами из удаленного репозитория то выполните команды:
+git fetch --all
+git reset --hard main
+
+// Объединения со старым, с получением нового из удалённого репозитория:
+git pull
+    //error: Ваши локальные изменения в указанных файлах будут перезаписаны при слиянии:
+    //Сделайте коммит или спрячьте ваши изменения перед слиянием веток.
+git stash
+    //Рабочий каталог и состояние индекса сохранены 
+git pull
+git stash pop
+    //На ветке main
+    //Ваша ветка обновлена в соответствии с «origin/main».
+git add . && git commit -m "init.v0.5-merge-with-remote-repo" && git push
+
+// ПК 1 путь:
+cd /home/corcog/myLearn
+
+// ПК 2 путь:
+cd C:\Project\myLearn
+

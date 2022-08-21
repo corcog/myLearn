@@ -1,0 +1,55 @@
+// Объединения со старым, с получением нового из удалённого репозитория:
+
+corcog@corcog-aspire:~/myLearn$ git pull
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 18 (delta 1), reused 18 (delta 1), pack-reused 0
+Распаковка объектов: 100% (18/18), 2.08 КиБ | 533.00 КиБ/с, готово.
+Из https://github.com/corcog/myLearn
+   6e4d58b..b9a07c1  main       -> origin/main
+Обновление 6e4d58b..b9a07c1
+error: Ваши локальные изменения в указанных файлах будут перезаписаны при слиянии:
+        info/git.txt
+Сделайте коммит или спрячьте ваши изменения перед слиянием веток.
+Прерываю
+corcog@corcog-aspire:~/myLearn$ git stash
+Рабочий каталог и состояние индекса сохранены WIP on main: 6e4d58b init.v0.2
+corcog@corcog-aspire:~/myLearn$ git pull
+Обновление 6e4d58b..b9a07c1
+Fast-forward
+ info/git.txt                    | 15 +++++++++++++++
+ info/info.txt                   |  0
+ info/link.txt                   |  5 +++++
+ js/ln1/alert1.2.js              |  1 +
+ js/{ln1.html => ln1/ln1.1.html} |  0
+ js/ln1/ln1.2.html               | 10 ++++++++++
+ 6 files changed, 31 insertions(+)
+ create mode 100644 info/info.txt
+ create mode 100644 info/link.txt
+ create mode 100644 js/ln1/alert1.2.js
+ rename js/{ln1.html => ln1/ln1.1.html} (100%)
+ create mode 100644 js/ln1/ln1.2.html
+corcog@corcog-aspire:~/myLearn$ git stash pop
+Автослияние info/git.txt
+На ветке main
+Ваша ветка обновлена в соответствии с «origin/main».
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>…», чтобы отменить изменения в рабочем каталоге)
+        изменено:      info/git.txt
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+        myssh
+        myssh.pub
+        pract/
+        ts/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+Отброшено refs/stash@{0} (b1ede8ea55d4847665a9b371811fbff1009a94f9)
+corcog@corcog-aspire:~/myLearn$ git add . && git commit -m "init.v0.5-merge-with-remote-repo" && git push
+
+

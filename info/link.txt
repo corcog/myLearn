@@ -1,0 +1,5 @@
+ Ссылки на ресурсы:
+
+https://learn.javascript.ru/ - учебник JS
+https://habr.com/ru/post/273897/ - Git и Github. Простые рецепты
+https://code.visualstudio.com/docs - документация Visual Studio Code
